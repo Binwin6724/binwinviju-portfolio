@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   FaPython, FaReact, FaNodeJs, FaAws, 
   FaDocker, FaGithub, FaDatabase
@@ -37,24 +37,35 @@ const Skills = () => {
     ],
   };
 
+  const [activeCategory, setActiveCategory] = useState(Object.keys(skillCategories)[0]);
+
   return (
     <section name="skills" className="skills-section">
       <div className="skills-container">
         <h2 className="skills-title">Skills</h2>
         
-        {Object.entries(skillCategories).map(([category, skills]) => (
-          <div key={category} className="skill-category">
-            <h3 className="category-title">{category}</h3>
-            <div className="skills-grid">
-              {skills.map((skill) => (
-                <div key={skill.name} className="skill-card">
-                  <div className="skill-icon">{skill.icon}</div>
-                  <p className="skill-name">{skill.name}</p>
-                </div>
-              ))}
-            </div>
+        <div className="skills-tabs">
+          {Object.keys(skillCategories).map((category) => (
+            <button
+              key={category}
+              className={`tab-button ${activeCategory === category ? 'active' : ''}`}
+              onClick={() => setActiveCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        <div className="skills-content">
+          <div className="skills-grid">
+            {skillCategories[activeCategory].map((skill) => (
+              <div key={skill.name} className="skill-card">
+                <div className="skill-icon">{skill.icon}</div>
+                <p className="skill-name">{skill.name}</p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );

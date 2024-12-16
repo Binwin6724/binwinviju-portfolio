@@ -11,9 +11,10 @@
 }
 
 .achievements-title {
+  display: inline-block;
   font-size: 2.25rem;
-  font-weight: 700;
   color: #ccd6f6;
+  border-bottom: 4px solid #64ffda;
   margin-bottom: 2rem;
 }
 

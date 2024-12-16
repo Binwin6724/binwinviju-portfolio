@@ -119,62 +119,6 @@ const Projects = () => {
       github: 'https://github.com/binwinviju/drone-project',
       live: 'https://drone-project-demo.vercel.app/',
       tags: ['Python', 'OpenCV', 'ROS', 'Arduino', 'Computer Vision']
-    },
-    {
-      title: 'BI Home',
-      description: 'A comprehensive Business Intelligence solution that transforms raw data into actionable insights. Features include interactive dashboards, automated reporting, and real-time analytics visualization.',
-      images: [biHome1, biHome2, biHome3, biHome4],
-      github: 'https://github.com/Binwin6724/Bi-home',
-      live: 'https://bi-home.choreoapps.dev/',
-      tags: ['React', 'Node.js', 'MongoDB', 'Express.js']
-    },
-    {
-      title: 'React Applications Portfolio',
-      description: 'A collection of full-stack applications including Business Management, E-commerce, Social Media, Movie Booking, Food Delivery, Cryptocurrency, and Real Estate platforms.',
-      images: [project2image],
-      github: 'https://github.com/binwinviju/Adobe-Engagement-Campaign-Platform',
-      live: 'https://adobe-engagement-campaign-platform.vercel.app/',
-      tags: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Redux']
-    },
-    {
-      title: 'Drone Development',
-      description: 'Final year project focused on autonomous drone technology. Implemented flight control systems, GPS navigation, obstacle avoidance, and real-time video streaming capabilities.',
-      images: [project3image],
-      github: 'https://github.com/binwinviju/drone-project',
-      live: 'https://drone-project-demo.vercel.app/',
-      tags: ['Python', 'OpenCV', 'ROS', 'Arduino', 'Computer Vision']
-    },
-    {
-      title: 'BI Home',
-      description: 'A comprehensive Business Intelligence solution that transforms raw data into actionable insights. Features include interactive dashboards, automated reporting, and real-time analytics visualization.',
-      images: [biHome1, biHome2, biHome3, biHome4],
-      github: 'https://github.com/Binwin6724/Bi-home',
-      live: 'https://bi-home.choreoapps.dev/',
-      tags: ['React', 'Node.js', 'MongoDB', 'Express.js']
-    },
-    {
-      title: 'React Applications Portfolio',
-      description: 'A collection of full-stack applications including Business Management, E-commerce, Social Media, Movie Booking, Food Delivery, Cryptocurrency, and Real Estate platforms.',
-      images: [project2image],
-      github: 'https://github.com/binwinviju/Adobe-Engagement-Campaign-Platform',
-      live: 'https://adobe-engagement-campaign-platform.vercel.app/',
-      tags: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Redux']
-    },
-    {
-      title: 'Drone Development',
-      description: 'Final year project focused on autonomous drone technology. Implemented flight control systems, GPS navigation, obstacle avoidance, and real-time video streaming capabilities.',
-      images: [project3image],
-      github: 'https://github.com/binwinviju/drone-project',
-      live: 'https://drone-project-demo.vercel.app/',
-      tags: ['Python', 'OpenCV', 'ROS', 'Arduino', 'Computer Vision']
-    },
-    {
-      title: 'Drone Development',
-      description: 'Final year project focused on autonomous drone technology. Implemented flight control systems, GPS navigation, obstacle avoidance, and real-time video streaming capabilities.',
-      images: [project3image],
-      github: 'https://github.com/binwinviju/drone-project',
-      live: 'https://drone-project-demo.vercel.app/',
-      tags: ['Python', 'OpenCV', 'ROS', 'Arduino', 'Computer Vision']
     }
   ];
 
@@ -192,6 +136,10 @@ const Projects = () => {
     );
   };
 
+  const visibleProjects = isMobile
+    ? [projects[currentProjectIndex]]
+    : projects.slice(currentProjectIndex, currentProjectIndex + 2);
+
   const totalSlides = Math.ceil(projects.length / (isMobile ? 1 : 2));
   const currentSlide = Math.floor(currentProjectIndex / (isMobile ? 1 : 2));
 
@@ -199,23 +147,11 @@ const Projects = () => {
     <section id="projects" name="projects" className="projects-section">
       <div className="projects-container">
         <h2 className="projects-title">Projects</h2>
+        
         <div className="projects-carousel">
-          <button
-            className="projects-nav-button prev main-nav"
-            onClick={prevProjects}
-            aria-label="Previous projects"
-          >
-            <FaChevronLeft />
-          </button>
-
           <div className="projects-viewport main">
-            <div
-              className="projects-track main"
-              style={{
-                transform: `translateX(-${currentProjectIndex * (100 / (isMobile ? 1 : 2))}%)`,
-              }}
-            >
-              {projects.map((project, index) => (
+            <div className="projects-track main">
+              {visibleProjects.map((project, index) => (
                 <div key={index} className="projects-slide">
                   <div className="project-card">
                     <ProjectCarousel images={project.images} />
@@ -235,7 +171,6 @@ const Projects = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="project-link"
-                          aria-label="View GitHub repository"
                         >
                           <FaGithub />
                         </a>
@@ -244,7 +179,6 @@ const Projects = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="project-link"
-                          aria-label="View live project"
                         >
                           <FaExternalLinkAlt />
                         </a>
@@ -255,25 +189,32 @@ const Projects = () => {
               ))}
             </div>
           </div>
-
+          
+          <div className="projects-dots main">
+            {Array.from({ length: totalSlides }).map((_, index) => (
+              <button
+                key={index}
+                className={`project-dot ${index === currentSlide ? 'active' : ''}`}
+                onClick={() => setCurrentProjectIndex(index * (isMobile ? 1 : 2))}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+          
           <button
-            className="projects-nav-button next main-nav"
+            className="projects-nav-button prev"
+            onClick={prevProjects}
+            aria-label="Previous projects"
+          >
+            <FaChevronLeft />
+          </button>
+          <button
+            className="projects-nav-button next"
             onClick={nextProjects}
             aria-label="Next projects"
           >
             <FaChevronRight />
           </button>
-        </div>
-
-        <div className="projects-dots main">
-          {[...Array(totalSlides)].map((_, index) => (
-            <button
-              key={index}
-              className={`project-dot ${index === currentSlide ? 'active' : ''}`}
-              onClick={() => setCurrentProjectIndex(index * (isMobile ? 1 : 2))}
-              aria-label={`Go to project set ${index + 1}`}
-            />
-          ))}
         </div>
       </div>
     </section>
