@@ -39,6 +39,26 @@
   max-width: 700px;
   font-size: 1.125rem;
   line-height: 1.75;
+  position: relative;
+}
+
+.hero-description::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 24px;
+  background-color: #64ffda;
+  margin-left: 4px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero-buttons {
