@@ -13,7 +13,7 @@ const About = () => {
           <div className="about-text">
             <p className="mb-4">
               I am a Senior Data Engineer and Full Stack Developer with 3.4 years of experience
-              at Latent Analytics, specializing in cloud and data solutions. With a strong background
+              at LatentView Analytics, specializing in cloud and data solutions. With a strong background
               in technologies including React, Python, SQL, and databases like PostgreSQL, MySQL,
               and MongoDB, I have successfully led projects automating ETL processes and
               improving data accuracy.
