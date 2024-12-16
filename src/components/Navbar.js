@@ -49,7 +49,7 @@ const Navbar = () => {
       {/* Desktop Menu */}
       <ul className='nav-menu'>
         {navItems.map(item => (
-          <li key={item.id} style={{ cursor: 'pointer' }}>
+          <li key={item.id} >
             <Link
               to={item.id}
               spy={true}
@@ -57,6 +57,7 @@ const Navbar = () => {
               duration={500}
               offset={-80}
               activeClass="active"
+              style={{ cursor: 'pointer' }}
             >
               {item.text}
             </Link>
@@ -72,7 +73,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <ul className={!nav ? 'mobile-menu' : 'mobile-menu active'}>
         {navItems.map(item => (
-          <li key={item.id} style={{ cursor: 'pointer' }}>
+          <li key={item.id} >
             <Link
               to={item.id}
               spy={true}
@@ -81,6 +82,7 @@ const Navbar = () => {
               offset={-80}
               activeClass="active"
               onClick={handleNav}
+              style={{ cursor: 'pointer' }}
             >
               {item.text}
             </Link>

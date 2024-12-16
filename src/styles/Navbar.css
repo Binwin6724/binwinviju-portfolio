@@ -1,3 +1,10 @@
+/* 
+  The .navbar class styles a fixed navigation bar positioned at the top of the page, 
+  spanning the full width of the viewport. It has a height of 80px and utilizes flexbox 
+  layout to space its child elements between each other. Padding on the sides is set to 
+  2rem. The background color is a semi-transparent dark shade with a blur effect applied 
+  for a frosted-glass appearance. The z-index ensures it stays above other content.
+*/
 .navbar {
   position: fixed;
   top: 0;
@@ -7,7 +14,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
-  background-color: rgba(10, 25, 47, 0.85);
+  background-color: rgba(10, 25, 47, 0.753);
   backdrop-filter: blur(10px);
   z-index: 1000;
 }

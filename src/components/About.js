@@ -12,15 +12,15 @@ const About = () => {
         <div className="about-content">
           <div className="about-text">
             <p className="mb-4">
-              I am a Senior Data Engineer and Full Stack Developer with 3.4 years of experience 
-              at Latent Analytics, specializing in cloud and data solutions. With a strong background 
-              in technologies including React, Python, SQL, and databases like PostgreSQL, MySQL, 
-              and MongoDB, I have successfully led projects automating ETL processes and 
+              I am a Senior Data Engineer and Full Stack Developer with 3.4 years of experience
+              at Latent Analytics, specializing in cloud and data solutions. With a strong background
+              in technologies including React, Python, SQL, and databases like PostgreSQL, MySQL,
+              and MongoDB, I have successfully led projects automating ETL processes and
               improving data accuracy.
             </p>
             <p className="mb-4">
-              Recently, I integrated the ECP app with image AI platforms like 
-              Hue Facebook, GitHub, Snapchat, and VSCO, enabling direct ad publishing. I am 
+              Recently, I integrated the ECP app with image AI platforms like
+              Hue Facebook, GitHub, Snapchat, and VSCO, enabling direct ad publishing. I am
               driven by a passion for leveraging technology to deliver impactful business results.
             </p>
           </div>
@@ -36,18 +36,18 @@ const About = () => {
             <h3 className="text-xl font-bold text-[#64ffda] mb-4">Personal Details</h3>
             <div className="space-y-3">
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <span className="font-bold text-[#ccd6f6] min-w-[100px]">Email:</span>
-                <a href="mailto:binwinviju2505@gmail.com" className="text-[#8892b0] hover:text-[#64ffda] transition-colors">
-                  binwinviju2505@gmail.com
+                <span style={{ fontWeight: 'bold', color: '#ccd6f6' }}>Email : </span>
+                <a href="mailto:binwinviju225096@gmail.com" style={{ cursor: 'pointer', color: '#8892b0' }}>
+                  binwinviju225096@gmail.com
                 </a>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <span className="font-bold text-[#ccd6f6] min-w-[100px]">Phone:</span>
-                <a href="tel:+918547476156" className="text-[#8892b0] hover:text-[#64ffda] transition-colors">
+                <span style={{ fontWeight: 'bold', color: '#ccd6f6' }}>Phone : </span>
+                <a href="tel:+918547476156" style={{ cursor: 'pointer', color: '#8892b0' }}>
                   +91 85474 76156
                 </a>
               </div>
-{/*               <div className="flex flex-col sm:flex-row gap-2">
+              {/*               <div className="flex flex-col sm:flex-row gap-2">
                 <span className="font-bold text-[#ccd6f6] min-w-[100px]">Location:</span>
                 <span className="text-[#8892b0]">Kollannur House, Kizhur P.O, Vyssery, Kunnamkulam, Kerala, India</span>
               </div>

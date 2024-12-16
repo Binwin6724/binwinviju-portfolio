@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import '../styles/Projects.css';
 import biHome1 from '../assets/bi-home/1.png';
@@ -84,6 +84,16 @@ const ProjectCarousel = ({ images }) => {
 
 const Projects = () => {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const projects = [
     {
@@ -169,19 +179,21 @@ const Projects = () => {
   ];
 
   const nextProjects = () => {
+    const step = isMobile ? 1 : 2;
     setCurrentProjectIndex((prev) =>
-      prev + 2 >= projects.length ? 0 : prev + 2
+      prev + step >= projects.length ? 0 : prev + step
     );
   };
 
   const prevProjects = () => {
+    const step = isMobile ? 1 : 2;
     setCurrentProjectIndex((prev) =>
-      prev === 0 ? Math.floor((projects.length - 1) / 2) * 2 : prev - 2
+      prev === 0 ? Math.floor((projects.length - 1) / step) * step : prev - step
     );
   };
 
-  const totalSlides = Math.ceil(projects.length / 2);
-  const currentSlide = Math.floor(currentProjectIndex / 2);
+  const totalSlides = Math.ceil(projects.length / (isMobile ? 1 : 2));
+  const currentSlide = Math.floor(currentProjectIndex / (isMobile ? 1 : 2));
 
   return (
     <section id="projects" name="projects" className="projects-section">
@@ -199,46 +211,46 @@ const Projects = () => {
           <div className="projects-viewport main">
             <div
               className="projects-track main"
-              style={{ transform: `translateX(-${(currentProjectIndex / 2) * 100}%)` }}
+              style={{
+                transform: `translateX(-${currentProjectIndex * (100 / (isMobile ? 1 : 2))}%)`,
+              }}
             >
-              {Array.from({ length: Math.ceil(projects.length / 2) }, (_, i) => i * 2).map((startIdx) => (
-                <div key={startIdx} className="projects-slide">
-                  {projects.slice(startIdx, startIdx + 2).map((project, index) => (
-                    <div key={startIdx + index} className="project-card">
-                      <ProjectCarousel images={project.images} />
-                      <div className="project-content">
-                        <h3 className="project-title">{project.title}</h3>
-                        <p className="project-description">{project.description}</p>
-                        <div className="project-tags">
-                          {project.tags.map((tag, tagIndex) => (
-                            <span key={tagIndex} className="project-tag">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                        <div className="project-links">
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="project-link"
-                            aria-label="View source code on GitHub"
-                          >
-                            <FaGithub />
-                          </a>
-                          <a
-                            href={project.live}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="project-link"
-                            aria-label="View live project"
-                          >
-                            <FaExternalLinkAlt />
-                          </a>
-                        </div>
+              {projects.map((project, index) => (
+                <div key={index} className="projects-slide">
+                  <div className="project-card">
+                    <ProjectCarousel images={project.images} />
+                    <div className="project-content">
+                      <h3 className="project-title">{project.title}</h3>
+                      <p className="project-description">{project.description}</p>
+                      <div className="project-tags">
+                        {project.tags.map((tag, tagIndex) => (
+                          <span key={tagIndex} className="project-tag">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="project-links">
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-link"
+                          aria-label="View GitHub repository"
+                        >
+                          <FaGithub />
+                        </a>
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-link"
+                          aria-label="View live project"
+                        >
+                          <FaExternalLinkAlt />
+                        </a>
                       </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
               ))}
             </div>
@@ -254,11 +266,11 @@ const Projects = () => {
         </div>
 
         <div className="projects-dots main">
-          {Array.from({ length: totalSlides }, (_, index) => (
+          {[...Array(totalSlides)].map((_, index) => (
             <button
               key={index}
               className={`project-dot ${index === currentSlide ? 'active' : ''}`}
-              onClick={() => setCurrentProjectIndex(index * 2)}
+              onClick={() => setCurrentProjectIndex(index * (isMobile ? 1 : 2))}
               aria-label={`Go to project set ${index + 1}`}
             />
           ))}
