@@ -29,6 +29,9 @@ const Navbar = () => {
           <Link to="projects" smooth={true} duration={500}>Projects</Link>
         </li>
         <li className='menu-item'>
+          <Link to="achievements" smooth={true} duration={500}>Acheivements</Link>
+        </li>
+        <li className='menu-item'>
           <Link to="contact" smooth={true} duration={500}>Contact</Link>
         </li>
       </ul>
@@ -51,6 +54,9 @@ const Navbar = () => {
         </li>
         <li className='mobile-menu-item'>
           <Link onClick={handleClick} to="projects" smooth={true} duration={500}>Projects</Link>
+        </li>
+        <li className='mobile-menu-item'>
+          <Link onClick={handleClick} to="achievements" smooth={true} duration={500}>Acheivements</Link>
         </li>
         <li className='mobile-menu-item'>
           <Link onClick={handleClick} to="contact" smooth={true} duration={500}>Contact</Link>

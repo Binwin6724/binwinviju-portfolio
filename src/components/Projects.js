@@ -3,6 +3,7 @@ import '../styles/Projects.css';
 import project1image from '../assets/project1.png';
 import project2image from '../assets/project1.png';
 import project3image from '../assets/project1.png';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const Projects = () => {
   const projects = [
@@ -16,7 +17,11 @@ const Projects = () => {
         "Implemented real-time data synchronization between multiple platforms",
         "Optimized database queries resulting in 40% faster response times",
         "Developed RESTful APIs for seamless platform integration"
-      ]
+      ],
+      links: {
+        github: "https://github.com/binwinviju/Adobe-Engagement-Campaign-Platform",
+        website: "https://adobe-engagement-campaign-platform.vercel.app/"
+      }
     },
     {
       image: project2image,
@@ -31,7 +36,11 @@ const Projects = () => {
         "Food Delivery Website",
         "Crypto Currency Website",
         "Real Estate Website"
-      ]
+      ],
+      links: {
+        github: "https://github.com/binwinviju/Adobe-Engagement-Campaign-Platform",
+        website: "https://adobe-engagement-campaign-platform.vercel.app/"
+      }
     },
     {
       image: project3image,
@@ -42,7 +51,11 @@ const Projects = () => {
         "Integrated GPS navigation and obstacle avoidance",
         "Developed real-time video streaming capabilities",
         "Created a user-friendly control interface"
-      ]
+      ],
+      links: {
+        github: "https://github.com/binwinviju/Adobe-Engagement-Campaign-Platform",
+        website: "https://adobe-engagement-campaign-platform.vercel.app/"
+      }
     }
   ];
 
@@ -75,6 +88,24 @@ const Projects = () => {
                       <li key={idx}>{item}</li>
                     ))}
                   </ul>
+                </div>
+                <div className="project-links">
+                  <a 
+                    href={project.links.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
+                    <FaGithub /> Code
+                  </a>
+                  <a 
+                    href={project.links.website} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
+                    <FaExternalLinkAlt /> Demo
+                  </a>
                 </div>
               </div>
             </div>
