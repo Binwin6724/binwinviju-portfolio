@@ -4,7 +4,7 @@ import '../styles/About.css';
 
 const About = () => {
   return (
-    <section name="about" className="about-section">
+    <section name="about" id="about" className="about-section">
       <div className="about-container">
         <div>
           <h2 className="about-title">About Me</h2>
@@ -47,18 +47,18 @@ const About = () => {
                   +91 85474 76156
                 </a>
               </div>
-              <div className="flex flex-col sm:flex-row gap-2">
+{/*               <div className="flex flex-col sm:flex-row gap-2">
                 <span className="font-bold text-[#ccd6f6] min-w-[100px]">Location:</span>
                 <span className="text-[#8892b0]">Kollannur House, Kizhur P.O, Vyssery, Kunnamkulam, Kerala, India</span>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                 <span className="font-bold text-[#ccd6f6] min-w-[100px]">Birth Date:</span>
-                <span className="text-[#8892b0]">15/06/1999</span>
+                <span className="text-[#8892b0]">19/06/1999</span>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                 <span className="font-bold text-[#ccd6f6] min-w-[100px]">Nationality:</span>
                 <span className="text-[#8892b0]">Indian</span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

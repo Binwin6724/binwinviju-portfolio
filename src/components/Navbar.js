@@ -1,66 +1,91 @@
 import React, { useState } from 'react';
-import { Link } from 'react-scroll';
+import { Link, Events, scrollSpy } from 'react-scroll';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const handleClick = () => setNav(!nav);
+
+  React.useEffect(() => {
+    Events.scrollEvent.register('begin', () => {});
+    Events.scrollEvent.register('end', () => {});
+    scrollSpy.update();
+
+    return () => {
+      Events.scrollEvent.remove('begin');
+      Events.scrollEvent.remove('end');
+    };
+  }, []);
+
+  const handleNav = () => setNav(!nav);
+
+  const navItems = [
+    { id: 'home', text: 'Home' },
+    { id: 'about', text: 'About' },
+    { id: 'skills', text: 'Skills' },
+    { id: 'projects', text: 'Projects' },
+    { id: 'achievements', text: 'Achievements' },
+    { id: 'contact', text: 'Contact' }
+  ];
 
   return (
     <nav className='navbar'>
       {/* Logo */}
-      <div>
-        <h1 className='navbar-logo'>Binwin Viju</h1>
+      <div style={{ cursor: 'pointer' }}>
+        <h1 className='navbar-logo'>
+          <Link 
+            to="home" 
+            spy={true}
+            smooth={true} 
+            duration={500}
+            offset={-80}
+            activeClass="active"
+          >
+            Binwin Viju
+          </Link>
+        </h1>
       </div>
 
       {/* Desktop Menu */}
-      <ul className='desktop-menu'>
-        <li className='menu-item'>
-          <Link to="home" smooth={true} duration={500}>Home</Link>
-        </li>
-        <li className='menu-item'>
-          <Link to="about" smooth={true} duration={500}>About</Link>
-        </li>
-        <li className='menu-item'>
-          <Link to="skills" smooth={true} duration={500}>Skills</Link>
-        </li>
-        <li className='menu-item'>
-          <Link to="projects" smooth={true} duration={500}>Projects</Link>
-        </li>
-        <li className='menu-item'>
-          <Link to="achievements" smooth={true} duration={500}>Acheivements</Link>
-        </li>
-        <li className='menu-item'>
-          <Link to="contact" smooth={true} duration={500}>Contact</Link>
-        </li>
+      <ul className='nav-menu'>
+        {navItems.map(item => (
+          <li key={item.id} style={{ cursor: 'pointer' }}>
+            <Link
+              to={item.id}
+              spy={true}
+              smooth={true}
+              duration={500}
+              offset={-80}
+              activeClass="active"
+            >
+              {item.text}
+            </Link>
+          </li>
+        ))}
       </ul>
 
       {/* Hamburger */}
-      <div onClick={handleClick} className='hamburger'>
-        {!nav ? <FaBars size={30} /> : <FaTimes size={30} />}
+      <div className='hamburger' onClick={handleNav}>
+        {!nav ? <FaBars /> : <FaTimes />}
       </div>
 
       {/* Mobile Menu */}
-      <ul className={nav ? 'mobile-menu' : 'mobile-menu hidden'}>
-        <li className='mobile-menu-item'>
-          <Link onClick={handleClick} to="home" smooth={true} duration={500}>Home</Link>
-        </li>
-        <li className='mobile-menu-item'>
-          <Link onClick={handleClick} to="about" smooth={true} duration={500}>About</Link>
-        </li>
-        <li className='mobile-menu-item'>
-          <Link onClick={handleClick} to="skills" smooth={true} duration={500}>Skills</Link>
-        </li>
-        <li className='mobile-menu-item'>
-          <Link onClick={handleClick} to="projects" smooth={true} duration={500}>Projects</Link>
-        </li>
-        <li className='mobile-menu-item'>
-          <Link onClick={handleClick} to="achievements" smooth={true} duration={500}>Acheivements</Link>
-        </li>
-        <li className='mobile-menu-item'>
-          <Link onClick={handleClick} to="contact" smooth={true} duration={500}>Contact</Link>
-        </li>
+      <ul className={!nav ? 'mobile-menu' : 'mobile-menu active'}>
+        {navItems.map(item => (
+          <li key={item.id} style={{ cursor: 'pointer' }}>
+            <Link
+              to={item.id}
+              spy={true}
+              smooth={true}
+              duration={500}
+              offset={-80}
+              activeClass="active"
+              onClick={handleNav}
+            >
+              {item.text}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

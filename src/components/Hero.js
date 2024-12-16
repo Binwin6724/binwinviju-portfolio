@@ -6,7 +6,7 @@ import Resume from '../resume/Binwin Resume.pdf';
 
 const Hero = () => {
   return (
-    <section name="home" className="hero-section">
+    <section name="home" id="home" className="hero-section">
       <div className="hero-container">
         <div className="animate-fadeIn">
           <p className="hero-greeting">Hi, my name is</p>
