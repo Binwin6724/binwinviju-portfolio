@@ -1,0 +1,209 @@
+@import './styles/animations.css';
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0a192f;
+  color: #8892b0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  padding-top: 80px; /* Height of navbar */
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Main content wrapper */
+.main-content {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin-top: 80px; /* Height of navbar */
+  position: relative;
+}
+
+/* Navbar spacing */
+.navbar {
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(10, 25, 47, 0.95);
+  backdrop-filter: blur(10px);
+  width: 100%;
+}
+
+section {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0; /* Add padding to sections */
+  min-height: calc(100vh - 80px); /* Subtract navbar height */
+  width: 100%;
+}
+
+section:first-of-type {
+  padding-top: 0; /* Remove top padding from first section */
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #233554, transparent);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: #ccd6f6;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Card styles */
+.card {
+  background: #112240;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+/* Button styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.button-primary {
+  background-color: #64ffda;
+  color: #0a192f;
+}
+
+.button-primary:hover {
+  background-color: transparent;
+  color: #64ffda;
+}
+
+.button-outline {
+  border: 2px solid #64ffda;
+  color: #64ffda;
+}
+
+.button-outline:hover {
+  background-color: #64ffda;
+  color: #0a192f;
+}
+
+/* Section title styles */
+.section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background-color: #64ffda;
+}
+
+/* Container styles */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Grid styles */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Hover effect styles */
+.hover-underline {
+  position: relative;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #64ffda;
+  transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Focus styles */
+*:focus {
+  outline: 2px solid #64ffda;
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px; /* Smaller navbar height on mobile */
+  }
+
+  .navbar {
+    height: 60px;
+  }
+
+  section {
+    padding: 60px 0;
+    min-height: calc(100vh - 60px);
+  }
+
+  .main-content {
+    margin-top: 60px;
+  }
+}
