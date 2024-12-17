@@ -5,8 +5,20 @@ import biHome1 from '../assets/bi-home/1.png';
 import biHome2 from '../assets/bi-home/2.png';
 import biHome3 from '../assets/bi-home/3.png';
 import biHome4 from '../assets/bi-home/4.png';
-import project2image from '../assets/project1.png';
-import project3image from '../assets/project1.png';
+import fundTracker1 from '../assets/fund-tracker/1.png';
+import fundTracker2 from '../assets/fund-tracker/2.png';
+import fundTracker3 from '../assets/fund-tracker/3.png';
+import portforlio1 from '../assets/portfolio/1.png';
+import tempProjectImage from '../assets/temp-project-image.png';
+import kiraliJewellers1 from '../assets/kirali-jewellers/1.png';
+import kiraliJewellers2 from '../assets/kirali-jewellers/2.png';
+import kiraliJewellers3 from '../assets/kirali-jewellers/3.png';
+import kiraliJewellers4 from '../assets/kirali-jewellers/4.png';
+import memorizerGame1 from '../assets/memorizer/1.png';
+import memorizerGame2 from '../assets/memorizer/2.png';
+import memorizerGame3 from '../assets/memorizer/3.png';
+import memorizerGame4 from '../assets/memorizer/4.png';
+import etrace1 from '../assets/etrace/1.png';
 
 const ProjectCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -97,6 +109,14 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'Binwin Viju - Portfolio',
+      description: 'A personal portfolio website built with React and deployed on Choreo. Used Custom Domain from GoDaddy.',
+      images: [portforlio1],
+      github: 'https://github.com/Binwin6724/binwinviju-portfolio',
+      live: 'https://binwinviju.co.in',
+      tags: ['React']
+    },
+    {
       title: 'BI Home',
       description: 'A comprehensive Business Intelligence solution that transforms raw data into actionable insights. Features include interactive dashboards, automated reporting, and real-time analytics visualization.',
       images: [biHome1, biHome2, biHome3, biHome4],
@@ -105,20 +125,43 @@ const Projects = () => {
       tags: ['React', 'Node.js', 'MongoDB', 'Express.js']
     },
     {
-      title: 'React Applications Portfolio',
-      description: 'A collection of full-stack applications including Business Management, E-commerce, Social Media, Movie Booking, Food Delivery, Cryptocurrency, and Real Estate platforms.',
-      images: [project2image],
-      github: 'https://github.com/binwinviju/Adobe-Engagement-Campaign-Platform',
-      live: 'https://adobe-engagement-campaign-platform.vercel.app/',
-      tags: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Redux']
+      title: 'Fund Tracker',
+      description: 'Fund Tracker is a platform that allows users to track and manage their funds efficiently. It provides management dashboard designed to help users efficiently track and manage their financial activities, including income, expenses, and overall balances. The intuitive interface and well-structured layout make it ideal for individuals, families, or small businesses to monitor their cash flow and manage budgets effectively.',
+      images: [fundTracker1, fundTracker2, fundTracker3],
+      github: 'https://github.com/Binwin6724/fund-tracker',
+      live: 'https://fund-tracker.choreoapps.dev/',
+      tags: ['React', 'Node.js', 'MongoDB', 'Express.js']
     },
     {
-      title: 'Drone Development',
-      description: 'Final year project focused on autonomous drone technology. Implemented flight control systems, GPS navigation, obstacle avoidance, and real-time video streaming capabilities.',
-      images: [project3image],
-      github: 'https://github.com/binwinviju/drone-project',
-      live: 'https://drone-project-demo.vercel.app/',
-      tags: ['Python', 'OpenCV', 'ROS', 'Arduino', 'Computer Vision']
+      title: 'Kirali Jewellers - Frontend Demo',
+      description: 'A frontend demo for a Kirali Jewellers website, showcasing a visually appealing and user-friendly interface for a jewelry store.',
+      images: [kiraliJewellers1, kiraliJewellers2, kiraliJewellers3, kiraliJewellers4],
+      github: 'https://github.com/Binwin6724/jewellery',
+      live: 'https://jewellery.choreoapps.dev',
+      tags: ['React']
+    },
+    {
+      title: 'Etrace - Expense Tracker',
+      description: 'An expense tracker app built with React and Firebase. Users can add, edit, and delete expenses, set budgets, and view detailed analytics.',
+      images: [etrace1],
+      github: '',
+      live: 'https://etrace-68406.web.app',
+      tags: ['React', 'Firebase']
+    },  
+    {
+      title: 'Memorizer Game',
+      description: 'A simple memorizer game built with React. Users can practice their memory by clicking on different cards and trying to match the patterns.',
+      images: [memorizerGame1, memorizerGame2, memorizerGame3, memorizerGame4],
+      github: 'https://github.com/Binwin6724/Memorizer',
+      live: 'https://memorizer-c0d7b.web.app/',
+      tags: ['React']
+    },
+    {
+      title: 'Other React Applications',
+      description: 'Other React applications I have built are CURD app using React, MongoDB and Flask. Bloo Messenger using React and Firebase. Validation in React using React, MySQL and NodeJS. Rock Paper and Scissor game using React and Heroku. Income Tracker using React and Heroku. CRUD app using React, MySQL, NodeJS. Tinder Clone using MERN. All these applications are not properly deployed.',
+      images: [tempProjectImage],
+      github: 'https://github.com/Binwin6724',
+      tags: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Flask']
     }
   ];
 

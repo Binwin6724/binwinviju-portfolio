@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import { 
   FaPython, FaReact, FaNodeJs, FaAws, 
-  FaDocker, FaGithub, FaDatabase
+  FaDocker, FaGithub, FaDatabase,
+  FaGoogle,
 } from 'react-icons/fa';
 import { 
   SiMongodb, SiPostgresql, 
-  SiMysql, SiKubernetes , SiHtml5, SiDatabricks, SiMariadb
+  SiMysql, SiKubernetes , SiHtml5, SiDatabricks, SiMariadb,
+  SiApachehadoop,
+  SiPresto,
+  SiEclipseche,
+  SiC,
+  SiCplusplus,
+  SiGo
 } from 'react-icons/si';
 import '../styles/Skills.css';
 
@@ -14,10 +21,14 @@ const Skills = () => {
     'Programming Languages': [
       { name: 'Python', icon: <FaPython /> },
       { name: 'JavaScript', icon: <FaNodeJs /> },
+      { name: 'C++', icon: <SiCplusplus /> },
+      { name: 'C', icon: <SiC /> },
+      { name: 'Go', icon: <SiGo /> },
     ],
     'Frontend Development': [
       { name: 'React', icon: <FaReact /> },
       { name: 'HTML5', icon: <SiHtml5 /> },
+      { name: 'Eclipse', icon: <SiEclipseche /> },
     ],
     'Backend & Databases': [
       { name: 'MongoDB', icon: <SiMongodb /> },
@@ -30,10 +41,13 @@ const Skills = () => {
       { name: 'Docker', icon: <FaDocker /> },
       { name: 'Kubernetes', icon: <SiKubernetes /> },
       { name: 'GitHub', icon: <FaGithub /> },
+      { name: 'Google Cloud', icon: <FaGoogle /> },
     ],
     'Data Engineering': [
       { name: 'ETL', icon: <FaDatabase /> },
       { name: 'Databricks', icon: <SiDatabricks /> },
+      { name: 'Hadoop', icon: <SiApachehadoop /> },
+      { name: 'Presto', icon: <SiPresto /> },
     ],
   };
 
