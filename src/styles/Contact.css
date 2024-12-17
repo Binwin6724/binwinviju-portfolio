@@ -83,6 +83,23 @@
   transform: translateY(-2px);
 }
 
+.submit-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.success-message {
+  color: #4caf50;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.error-message {
+  color: #f44336;
+  margin-top: 10px;
+  text-align: center;
+}
+
 .contact-links {
   display: flex;
   justify-content: center;

@@ -12,18 +12,18 @@ const About = () => {
         <div className="about-content">
           <div className="about-text">
             <p className="mb-4">
-            I am a Senior Data Engineer and Full Stack Developer with 3.4 
-years of experience at LatentView Analytics, specializing in end-to-end 
-data solutions, scalable backend systems, and platform integration. 
-Proficient in Databricks, Go, React, Node.js, Python, and MongoDB, 
-I have successfully led projects automating ETL processes and 
-improving data accuracy. 
+              I am a Senior Data Engineer and Full Stack Developer with 3.4
+              years of experience at LatentView Analytics, specializing in end-to-end
+              data solutions, scalable backend systems, and platform integration.
+              Proficient in Databricks, Go, React, Node.js, Python, and MongoDB,
+              I have successfully led projects automating ETL processes and
+              improving data accuracy.
             </p>
             <p className="mb-4">
-            Recently, I integrated the ECP app with major 
-ad platforms like Facebook, YouTube, Snapchat, and TikTok, enabling 
-direct ad publishing. I am driven by a passion for leveraging technology 
-to deliver impactful business results.
+              Recently, I integrated the ECP app with major
+              ad platforms like Facebook, YouTube, Snapchat, and TikTok, enabling
+              direct ad publishing. I am driven by a passion for leveraging technology
+              to deliver impactful business results.
             </p>
           </div>
           <div className="about-image-container">
