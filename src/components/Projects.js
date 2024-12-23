@@ -8,7 +8,7 @@ import biHome4 from '../assets/bi-home/4.png';
 import fundTracker1 from '../assets/fund-tracker/1.png';
 import fundTracker2 from '../assets/fund-tracker/2.png';
 import fundTracker3 from '../assets/fund-tracker/3.png';
-import portforlio1 from '../assets/portfolio/1.png';
+import todolist1 from '../assets/todolist/1.png';
 import tempProjectImage from '../assets/temp-project-image.png';
 import kiraliJewellers1 from '../assets/kirali-jewellers/1.png';
 import kiraliJewellers2 from '../assets/kirali-jewellers/2.png';
@@ -109,20 +109,12 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'Binwin Viju - Portfolio',
-      description: 'A personal portfolio website built with React and deployed on Choreo. Used Custom Domain from GoDaddy.',
-      images: [portforlio1],
-      github: 'https://github.com/Binwin6724/binwinviju-portfolio',
-      live: 'https://binwinviju.co.in',
+      title: 'TaskMaster - Todo List',
+      description: 'A powerful and intuitive todo list application with rich text formatting, task categorization, and progress tracking.',
+      images: [todolist1],
+      github: 'https://github.com/Binwin6724/todo-list',
+      live: 'https://taskmaster.choreoapps.dev/',
       tags: ['React']
-    },
-    {
-      title: 'BI Home',
-      description: 'A comprehensive Business Intelligence solution that transforms raw data into actionable insights. Features include interactive dashboards, automated reporting, and real-time analytics visualization.',
-      images: [biHome1, biHome2, biHome3, biHome4],
-      github: 'https://github.com/Binwin6724/Bi-home',
-      live: 'https://bi-home.choreoapps.dev/',
-      tags: ['React', 'Node.js', 'MongoDB', 'Express.js']
     },
     {
       title: 'Fund Tracker',
@@ -130,6 +122,14 @@ const Projects = () => {
       images: [fundTracker1, fundTracker2, fundTracker3],
       github: 'https://github.com/Binwin6724/fund-tracker',
       live: 'https://fund-tracker.choreoapps.dev/',
+      tags: ['React', 'Node.js', 'MongoDB', 'Express.js']
+    },
+    {
+      title: 'BI Home',
+      description: 'A comprehensive Business Intelligence solution that transforms raw data into actionable insights. Features include interactive dashboards, automated reporting, and real-time analytics visualization.',
+      images: [biHome1, biHome2, biHome3, biHome4],
+      github: 'https://github.com/Binwin6724/Bi-home',
+      live: 'https://bi-home.choreoapps.dev/',
       tags: ['React', 'Node.js', 'MongoDB', 'Express.js']
     },
     {
