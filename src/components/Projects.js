@@ -8,7 +8,7 @@ import biHome4 from '../assets/bi-home/4.png';
 import fundTracker1 from '../assets/fund-tracker/1.png';
 import fundTracker2 from '../assets/fund-tracker/2.png';
 import fundTracker3 from '../assets/fund-tracker/3.png';
-import todolist1 from '../assets/todolist/1.png';
+import todolist1 from '../assets/todo-list/1.png';
 import tempProjectImage from '../assets/temp-project-image.png';
 import kiraliJewellers1 from '../assets/kirali-jewellers/1.png';
 import kiraliJewellers2 from '../assets/kirali-jewellers/2.png';
